@@ -1,6 +1,7 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.yeohangjissokssok.activity.PlaceAdapterRecommend
 import com.example.yeohangjissokssok.activity.PlaceResponse
 import com.example.yeohangjissokssok.databinding.PlaceRecyclerBinding
 
@@ -14,14 +15,14 @@ class PlaceAdapter(var datas: ArrayList<PlaceResponse>)
     var itemClicklistener:OnItemClickListener?=null
 
     inner class ViewHolder(val binding: PlaceRecyclerBinding) :  RecyclerView.ViewHolder(binding.root) {
-//        init{
-//            binding.tvRvPlace.setOnClickListener {
-//                itemClicklistener?.OnItemClick(adapterPosition)
-//            }
-//        }
+        init{
+            binding.tvRvPlacename.setOnClickListener {
+                itemClicklistener?.OnItemClick(adapterPosition)
+            }
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceAdapter.ViewHolder {
         val view = PlaceRecyclerBinding.inflate(LayoutInflater.from(parent.context))
         return ViewHolder(view)
     }
@@ -32,6 +33,8 @@ class PlaceAdapter(var datas: ArrayList<PlaceResponse>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //holder.binding.tvRvPlace.text = datas[position].region + " " + datas[position].name
+        holder.binding.tvRvPlacename.text = datas[position].name
+        holder.binding.tvRvPlacelocation.text = datas[position].region
     }
 
 }

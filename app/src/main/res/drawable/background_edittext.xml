@@ -3,21 +3,21 @@
     <item android:state_focused="true">
         <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
             <stroke
-                android:width="5dp"
-                android:color="@color/editTextColor" />
+                android:width="2dp"
+                android:color="@color/keywordSelected" />
             <corners android:radius="30dp"/>
             <solid
-                android:color="@color/editTextColor" />
+                android:color="@color/white" />
         </shape>
     </item>
     <item android:state_focused="false">
         <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
             <stroke
-                android:width="5dp"
-                android:color="@color/editTextColor" />
+                android:width="2dp"
+                android:color="@color/keywordSelected" />
             <corners android:radius="10dp"/>
             <solid
-                android:color="@color/editTextColor" />
+                android:color="@color/white" />
         </shape>
     </item>
 </selector>
